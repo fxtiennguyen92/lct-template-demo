@@ -2,7 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Image;
+use App\Models\Menu;
+use App\Models\Offer;
+use App\Models\Plat;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,5 +25,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        // Truyền dữ liệu $offers vào tất cả các view
+        View::share('offers', Offer::all());
+        View::share('images', Image::all());
+        View::share('menus', Menu::all());
+        View::share('plats', Plat::all());
     }
 }
