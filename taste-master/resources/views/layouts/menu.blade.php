@@ -13,7 +13,7 @@
 
             <div class="col-md-12 text-center">
 
-                <ul class="nav ftco-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
+                {{-- <ul class="nav ftco-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
                     @foreach ($menus as $menu)
                         <li class="nav-item ftco-animate">
                             <a class="nav-link active" id="pills-breakfast-tab" data-toggle="pill"
@@ -23,15 +23,21 @@
                             </a>
                         </li>
                     @endforeach
-                    {{-- 
-                    <li class="nav-item ftco-animate">
-                        <a class="nav-link" id="pills-lunch-tab" data-toggle="pill" href="#pills-lunch" role="tab"
-                            aria-controls="pills-lunch" aria-selected="false">Lunch</a>
-                    </li>
-                    <li class="nav-item ftco-animate">
-                        <a class="nav-link" id="pills-dinner-tab" data-toggle="pill" href="#pills-dinner" role="tab"
-                            aria-controls="pills-dinner" aria-selected="false">Dinner</a>
-                    </li> --}}
+                </ul> --}}
+                <ul class="nav ftco-tab-nav nav-pills mb-5" id="pills-tab" role="tablist">
+                    @foreach ($menus as $index => $menu)
+                        @php
+                            $slug = 'pills-' . Str::slug($menu->title); // ví dụ: "Breakfast" => "pills-breakfast"
+                        @endphp
+                        <li class="nav-item ftco-animate">
+                            <a class="nav-link {{ $index == 0 ? 'active' : '' }}" id="{{ $slug }}-tab"
+                                data-toggle="pill" href="#{{ $slug }}" role="tab"
+                                aria-controls="{{ $slug }}"
+                                aria-selected="{{ $index == 0 ? 'true' : 'false' }}">
+                                {{ $menu->title }}
+                            </a>
+                        </li>
+                    @endforeach
                 </ul>
 
                 <div class="tab-content text-left">

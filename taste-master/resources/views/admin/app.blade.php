@@ -34,10 +34,12 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
+<script src="js/main.js"></script>
 
 <body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
     <nav class="nav flex-column">
         <a class="nav-link" aria-current="page" href="{{ route('offers.list') }}">Offers</a>
+        <a class="nav-link" aria-current="page" href="{{ route('menus_plats') }}">Menus & Plats</a>
     </nav>
 
     {{-- @include('layouts.header')

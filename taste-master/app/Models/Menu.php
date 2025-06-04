@@ -14,6 +14,6 @@ class Menu extends Model
     public $timestamps = false;
 
     public function plats(){
-        return $this->belongsToMany(Plat::class);
+        return $this->belongsToMany(Plat::class, 'menus_plats');
     }
 }

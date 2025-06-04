@@ -13,9 +13,9 @@ class Plat extends Model
     public $timestamps = false;
     protected $fillable = ['title', 'description', 'price', 'image_id', 'plat_id'];
 
-    public function plats()
+    public function menus()
     {
-        return $this->belongsToMany(Plat::class, 'menus_plats');
+        return $this->belongsToMany(Menu::class, 'menus_plats');
     }
 
     public function image()
