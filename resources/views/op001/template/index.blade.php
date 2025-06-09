@@ -68,6 +68,7 @@
             </div>
         </div>
     </div>
+    <!-- END SPINNER -->
 
     <!-- PAGE -->
     <div id="page" class="page">
@@ -86,9 +87,6 @@
 
     </div> <!-- END PAGE -->
 
-
-
-
     <!-- EXTERNAL SCRIPTS -->
     <script src="op001/js/jquery-3.6.0.min.js"></script>
     <script src="op001/js/bootstrap.min.js"></script>
@@ -105,32 +103,12 @@
     <script src="op001/js/jquery.flexslider.js"></script>
     <script src="op001/js/owl.carousel.min.js"></script>
     <script src="op001/js/jquery.magnific-popup.min.js"></script>
-    <script src="op001/js/booking-form.js"></script>
-    <script src="op001/js/contact-form.js"></script>
     <script src="op001/js/jquery.validate.min.js"></script>
     <script src="op001/js/jquery.ajaxchimp.min.js"></script>
     <script src="op001/js/wow.js"></script>
 
     <script src="op001/js/custom.js"></script>
 
-    <!-- Google Analytics: Change UA-XXXXX-X to be your site's ID. Go to http://www.google.com/analytics/ for more information. -->
-    <!--
-  <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-XXXXX-X']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-          var ga = document.createElement('script');
-          ga.type = 'text/javascript';
-          ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-              '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(ga, s);
-      })();
-  </script>
-  -->
 </body>
 
 </html>

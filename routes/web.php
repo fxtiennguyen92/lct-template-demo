@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SitemapXmlController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 use TCG\Voyager\Facades\Voyager;
@@ -9,7 +10,6 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::get('/', [WebController::class, 'home'])->name('home');
+Route::get('mentions-legales', [WebController::class, 'legalNotice'])->name('legal-notice');
 
-// Route::get('/', function () {
-//     return view('welcome');
-// }); 
+Route::get('sitemap.xml', [WebController::class, 'sitemap']);
