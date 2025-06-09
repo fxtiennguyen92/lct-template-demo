@@ -20,9 +20,14 @@
     <!-- META -->
     <meta property="og:title" content="{{ setting('site.title') }}" />
     <meta property="og:description" content="{{ setting('site.description') }}" />
-    <meta property="og:image" content="{{ setting('site.image_preview') }}" />
+    <meta property="og:image" content="{{ Storage::disk('public')->url('common/web_bg.jpg') }}" />
     <meta property="og:url" content="{{ config('app.url') }}" />
     <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ setting('site.title') }}" />
+    <meta name="twitter:description" content="{{ setting('site.description') }}" />
+    <meta property="twitter:image" content="{{ Storage::disk('public')->url('common/web_bg.jpg') }}" />
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;700;800&display=swap"
