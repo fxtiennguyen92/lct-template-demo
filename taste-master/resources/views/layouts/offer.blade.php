@@ -4,13 +4,23 @@
         <div class="row">
             <div class="col-md-12 text-center mb-5 ftco-animate">
                 <h4 class="ftco-sub-title">Our Offers</h4>
-                <h2 class="display-4">Offers &amp; Promos</h2>
-                <div class="row justify-content-center">
+                @foreach ($contents as $content)
+                    @if ($content->category == 'Offer')
+                        <h2 class="display-4">Offers &amp; Promos</h2>
+                        <div class="row justify-content-center">
+                            <div class="col-md-7">
+                                <p class="lead">{{$content->description}}</p>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+                {{-- <h2 class="display-4">Offers &amp; Promos</h2> --}}
+                {{-- <div class="row justify-content-center">
                     <div class="col-md-7">
                         <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia
                             and Consonantia, there live the blind texts.</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-md-12">
                 <div class="owl-carousel ftco-owl">

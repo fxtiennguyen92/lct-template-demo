@@ -26,9 +26,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         // Truyền dữ liệu $offers vào tất cả các view
-        View::share('offers', Offer::all());
-        View::share('images', Image::all());
-        View::share('menus', Menu::all());
-        View::share('plats', Plat::all());
+        // View::share('offers', Offer::all());
+        // View::share('images', Image::all());
+        // View::share('menus', Menu::all());
+        // View::share('plats', Plat::all());
     }
 }

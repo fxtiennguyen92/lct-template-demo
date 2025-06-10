@@ -45,30 +45,17 @@
     {{-- <link rel="stylesheet" href="css/style.css"> --}}
     <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
 
 </head>
 
 <body data-spy="scroll" data-target="#ftco-navbar" data-offset="200">
 
-    @include('layouts.header')
 
-    @include('layouts.cover')
 
-    @include('layouts.welcome')
-
-    @include('layouts.offer')
-
-    @include('layouts.menu')
-
-    @include('layouts.news')
-
-    @include('layouts.gallery')
-
-    @include('layouts.contact')
-
-    @include('layouts.modal')
-
-    @include('layouts.footer')
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
@@ -78,6 +65,8 @@
                 stroke-miterlimit="10" stroke="#F96D00" />
         </svg></div>
 
+
+    @yield('content')
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>

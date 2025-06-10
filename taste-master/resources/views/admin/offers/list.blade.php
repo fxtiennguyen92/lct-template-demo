@@ -1,10 +1,10 @@
-<div class="item">
+{{-- <div class="item">
     <div class="media d-block mb-4 text-center ftco-media ftco-animate border-0">
         @foreach ($offers as $offer)
             @if ($offer->image)
                 <img src="{{ asset('storage/' . $offer->image->src) }}" alt="Free Template by Free-Template.co"
                     class="img-fluid">
-                {{-- @dd('lấy dc ảnh') --}}
+             
             @else
             @endif
             <div class="media-body p-md-5 p-4">
@@ -34,3 +34,6 @@
         <a class="nav-link" aria-current="page" href="{{ route('offers.create') }}">Create a new offer</a>
     </div>
 </div>
+ --}}
+
+ {{$offers}}

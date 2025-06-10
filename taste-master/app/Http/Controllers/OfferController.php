@@ -21,6 +21,12 @@ class OfferController extends Controller
         return view("admin.offers.list", ["offers" => $offers]);
     }
 
+    public function showClient()
+    {
+        $offers = Offer::all();
+        return view("layouts.offer", ["offers" => $offers]);
+    }
+
     public function create()
     {
         return view('admin.offers.create');
@@ -44,7 +50,8 @@ class OfferController extends Controller
         // if there is a photo, save it
         if ($request->hasFile('images')) {
             $filename = $request->file('images')->getClientOriginalName();
-            $path = $request->file('images')->storeAs('public/images', $filename);
+            // lưu ảnh vào storage/app/public/images
+            $request->file('images')->storeAs('public/images', $filename, );
             $publicPath = 'images/' . $filename;
             $image = Image::create([
                 'category' => 'Offer',

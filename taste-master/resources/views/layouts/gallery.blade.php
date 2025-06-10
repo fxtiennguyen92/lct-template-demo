@@ -1,50 +1,38 @@
 <section class="ftco-section" id="section-gallery">
-        <div class="container">
-            <div class="row ftco-custom-gutters">
+    <div class="container">
+        <div class="row ftco-custom-gutters">
 
-                <div class="col-md-12 text-center mb-5 ftco-animate">
-                    <h2 class="display-4">Food Gallery</h2>
-                    <div class="row justify-content-center">
-                        <div class="col-md-7">
-                            <p class="lead">Far far away, behind the word mountains, far from the countries Vokalia
-                                and Consonantia, there live the blind texts.</p>
+            <div class="col-md-12 text-center mb-5 ftco-animate">
+                @foreach ($contents as $content)
+                    @if ($content->category == 'Gallery')
+                        <h2 class="display-4">
+                            {{ $content->title }}
+                        </h2>
+                        <div class="row justify-content-center">
+                            <div class="col-md-7">
+                                <p class="lead">
+                                    {{$content->description}}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
 
-                <div class="col-md-4 ftco-animate">
-                    <a href="images/menu_1.jpg" class="ftco-thumbnail image-popup">
-                        <img src="images/menu_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <a href="images/menu_2.jpg" class="ftco-thumbnail image-popup">
-                        <img src="images/menu_2.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <a href="images/menu_3.jpg" class="ftco-thumbnail image-popup">
-                        <img src="images/menu_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-                    </a>
-                </div>
-
-                <div class="col-md-4 ftco-animate">
-                    <a href="images/menu_2.jpg" class="ftco-thumbnail image-popup">
-                        <img src="images/menu_2.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <a href="images/menu_3.jpg" class="ftco-thumbnail image-popup">
-                        <img src="images/menu_3.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-                    </a>
-                </div>
-                <div class="col-md-4 ftco-animate">
-                    <a href="images/menu_1.jpg" class="ftco-thumbnail image-popup">
-                        <img src="images/menu_1.jpg" alt="Free Template by Free-Template.co" class="img-fluid">
-                    </a>
-                </div>
 
             </div>
+
+            @foreach ($galleryImages as $image)
+                <div class="col-md-4 ftco-animate">
+                    <a href="{{ asset('storage/' . $image->src) }}" class="ftco-thumbnail image-popup">
+                        <img src="{{ asset('storage/' . $image->src) }}" alt="{{ $image->alt ?? 'Gallery Image' }}"
+                            class="img-fluid">
+                    </a>
+                </div>
+            @endforeach
+
+
+
         </div>
-    </section>
-    <!-- END section -->
+    </div>
+</section>
+<!-- END section -->

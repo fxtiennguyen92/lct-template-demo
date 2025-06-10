@@ -3,21 +3,22 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\PlatController;
+use App\Http\Controllers\WebController;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/home', function () {
-    return view('layouts.home');
-});
 
-Route::get('/admin', function () {
-    return view('admin.app');
-});
+// Route::get('/admin', function () {
+//     return view('admin.app');
+// });
+Route::get('/admin', [WebController::class, 'showAdmin'] )->name('admin');
+
+Route::get('/home', [WebController::class, 'showindex'] )->name('home');
 
 Route::get('/offers', [OfferController::class, 'show'])->name('offers.list');
 Route::get('/offers/create', [OfferController::class, 'create'])->name('offers.create');
