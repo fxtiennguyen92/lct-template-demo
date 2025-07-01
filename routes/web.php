@@ -11,5 +11,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/', [WebController::class, 'home'])->name('home');
 Route::get('mentions-legales', [WebController::class, 'legalNotice'])->name('legal-notice');
+Route::get('privacy-policy', [WebController::class, 'privacyPolicy'])->name('privacy-policy');
 
 Route::get('sitemap.xml', [WebController::class, 'sitemap']);

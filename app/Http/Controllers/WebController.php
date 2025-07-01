@@ -27,6 +27,16 @@ class WebController extends Controller
         return view($this::PROJECT_CODE . '.legal_notice', compact('page'));
     }
 
+    public function privacyPolicy()
+    {
+        $page = Page::where('slug', 'privacy-policy')->where('status', 'ACTIVE')->first();
+        if (!$page) {
+            return abort(404);
+        }
+
+        return view($this::PROJECT_CODE . '.privacy_policy', compact('page'));
+    }
+
     public function home()
     {
         // Services
