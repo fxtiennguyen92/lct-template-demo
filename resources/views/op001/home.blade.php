@@ -73,16 +73,13 @@
                         <!-- Table -->
                         <table class="table">
                             <tbody>
-                                <tr>
-                                    <td>Lundi - Vendredi</td>
-                                    <td> - </td>
-                                    <td class="text-end">09:00 - 19:00</td>
-                                </tr>
-                                <tr>
-                                    <td>Samedi</td>
-                                    <td> - </td>
-                                    <td class="text-end">09:00 - 18:00</td>
-                                </tr>
+                                @foreach ($openingHours as $hour)
+                                    <tr>
+                                        <td>{{ $hour->day }}</td>
+                                        <td> - </td>
+                                        <td class="text-end">{{ $hour->time }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

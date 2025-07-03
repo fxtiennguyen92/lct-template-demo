@@ -127,5 +127,7 @@ return [
      * Add-in
      */
 
+    'template_code' => 'op002',
     'web_preview_image' => 'common/web_preview.png'
+
 ];

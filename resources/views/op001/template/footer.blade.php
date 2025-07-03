@@ -33,8 +33,9 @@
                 <div class="footer-info mb-30">
                     <h5 class="h5-md">Horaires</h5>
 
-                    <p class="p-lg">Lundi - Vendredi: 09:00 - 19:00</p>
-                    <p class="p-lg">Samedi: 09:00 - 18:00</p>
+                    @foreach ($openingHours as $hour)
+                        <p class="p-lg">{{ $hour->day }} : {{ $hour->time }}</p>
+                    @endforeach
                 </div>
             </div>
 
