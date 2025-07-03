@@ -7,9 +7,9 @@
             <p class="post-tag">@yield('code') | @yield('message')</p>
         </div>
 
-        @if (setting('site.error_banner'))
+        @if (setting('salon.error_page_banner'))
             <div class="blog-post-img mt-50 mb-50">
-                <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('site.error_banner')) }}"
+                <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.error_page_banner')) }}"
                     alt="blog-post-image" />
             </div>
         @endif
