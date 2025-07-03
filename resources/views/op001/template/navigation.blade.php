@@ -2,9 +2,9 @@
     <div class="wsmainwp clearfix">
         <!-- HEADER LOGO -->
         <div class="desktoplogo"><a href="{{ route('home') }}" class="logo-black"><img
-                    src="{{ Storage::disk('public')->url(setting('site.logo_secondary')) }}" alt="header-logo"></a></div>
+                    src="{{ Storage::disk('public')->url(setting('salon.logo')) }}" alt="header-logo"></a></div>
         <div class="desktoplogo"><a href="{{ route('home') }}" class="logo-white"><img
-                    src="{{ Storage::disk('public')->url(setting('site.logo')) }}" alt="header-logo"></a></div>
+                    src="{{ Storage::disk('public')->url(setting('salon.logo_secondary')) }}" alt="header-logo"></a></div>
 
         <!-- MAIN MENU -->
         <nav class="wsmenu clearfix">

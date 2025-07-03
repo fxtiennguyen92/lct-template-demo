@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\OpeningHour;
 use App\Voyager\CustomSchemaManager;
 use Illuminate\Support\ServiceProvider;
 use TCG\Voyager\Database\Schema\SchemaManager;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Request;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -21,6 +24,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Opening hours
+        View::composer('*', function ($view) {
+            
+            if (!Request::is('admin/*')) {
+                $openingHours = OpeningHour::getAll();
+                $view->with('openingHours', $openingHours);
+            }
+        });
     }
 }

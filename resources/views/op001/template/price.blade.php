@@ -4,8 +4,8 @@
             <div class="col-md-6">
                 <div class="img-block right-column wow fadeInLeft"
                     style="visibility: visible; animation-name: fadeInLeft;">
-                    <img class="img-fluid" src="{{ Storage::disk('public')->url('common/polish.png') }}"
-                        alt="{{ setting('site.store') }}">
+                    <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.price_banner')) }}"
+                        alt="{{ setting('salon.store') }}">
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
             <!-- PRICING IMAGE -->
             <div class="col-lg-6">
                 <div class="pricing-1-img wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                    <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('site.image_service')) }}" alt="{{ setting('site.store') }}">
+                    <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.service_banner')) }}" alt="{{ setting('site.store') }}">
                 </div>
             </div>
 

@@ -15,7 +15,7 @@
 
                 <div class="col-md-5 col-lg-6">
                     <div class="hero-2-img wow fadeInLeft">
-                        <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('site.home_banner')) }}"
+                        <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.home_banner')) }}"
                             alt="hero-image">
                     </div>
                 </div>
@@ -40,7 +40,8 @@
 
                 <div class="col-md-5 col-lg-6 order-last order-md-2">
                     <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid" src="op001/images/common/img002.webp" alt="about-image">
+                        <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.about_banner')) }}"
+                            alt="about-image">
                     </div>
                 </div>
 
@@ -49,23 +50,36 @@
                         <div class="section-id">Faites Briller Votre Style</div>
 
                         <h3 class="h3-md">Art Ongulaire d'Exception</h3>
-                        <p class="p-lg">Vous êtes accueillie comme une reine par une équipe de professionnelles du style.
-                            Sublimez vos mains et vos pieds en accord avec la saison, votre humeur ou vos tenues !</p>
+                        <p class="p-lg">Nullam tempor sapien gravida donec and pretium ipsum porta integer justo an odio
+                            velna vitae
+                            auctor integer congue magna undo purus a pretium ligula rutrum magna egestas
+                        </p>
+                        <ul class="simple-list">
+                            <li class="list-item">
+                                <p class="p-lg">Aliquam vitae molestie at quisque sapien volutpat and justo, aliquet
+                                    molestie purus
+                                    efficitur ipsum
+                                </p>
+                            </li>
+                            <li class="list-item">
+                                <p class="p-lg">Sagittis congue augue magna risus mauris volutpat and egestas magna
+                                    suscipit egestas a
+                                    vitae purus
+                                </p>
+                            </li>
+                        </ul>
                     </div>
                     <div class="txt-block txt-table right-column wow fadeInLeft">
                         <!-- Table -->
                         <table class="table">
                             <tbody>
-                                <tr>
-                                    <td>Lundi - Vendredi</td>
-                                    <td> - </td>
-                                    <td class="text-end">09:00 - 19:00</td>
-                                </tr>
-                                <tr>
-                                    <td>Samedi</td>
-                                    <td> - </td>
-                                    <td class="text-end">09:00 - 18:00</td>
-                                </tr>
+                                @foreach ($openingHours as $hour)
+                                    <tr>
+                                        <td>{{ $hour->day }}</td>
+                                        <td> - </td>
+                                        <td class="text-end">{{ $hour->time }}</td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
@@ -87,6 +101,7 @@
                                 <span class="flaticon-pedicure-1"></span>
                             </div>
                             <h5 class="h5-lg">Pose Capsule</h5>
+                            <p class="p-lg">Ligula risus auctor tempus and dolor vitae undo purus semper sodales</p>
                         </div>
                     </div>
                     <div class="col">
@@ -96,6 +111,7 @@
                                 <span class="flaticon-nail-polish-3"></span>
                             </div>
                             <h5 class="h5-lg">Remplissage</h5>
+                            <p class="p-lg">Ligula risus auctor tempus and dolor vitae undo purus semper sodales</p>
                         </div>
                     </div>
                     <div class="col">
@@ -105,6 +121,7 @@
                                 <span class="flaticon-soak"></span>
                             </div>
                             <h5 class="h5-lg">Beauté des pieds</h5>
+                            <p class="p-lg">Ligula risus auctor tempus and dolor vitae undo purus semper sodales</p>
                         </div>
                     </div>
                 </div>
@@ -149,7 +166,7 @@
     </section>
     <!-- END GALLERY -->
 
-    <!-- BANNER STUDENT -->
-    {!! setting('site.promotion_banner') !!}
-    <!-- END BANNER STUDENT -->
+    <!-- BANNER PROMOTION -->
+    {!! setting('salon.promotion_section') !!}
+    <!-- END BANNER PROMOTION -->
 @endpush

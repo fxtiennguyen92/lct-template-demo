@@ -4,7 +4,7 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <url>
-        <loc>https://longlerydestanneurs.fr/</loc>
+        <loc>https://licortech.com/</loc>
         <lastmod>2025-06-08T00:00:00+00:00</lastmod>
     </url>
 </urlset>

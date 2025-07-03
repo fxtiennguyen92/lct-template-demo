@@ -13,9 +13,10 @@
     <meta name="description" content="{{ setting('site.description') }}" />
 
     <!-- FAVICON AND TOUCH ICONS -->
-    <link rel="shortcut icon" href="{{ Storage::disk('public')->url(setting('site.icon')) }}" type="image/x-icon">
-    <link rel="icon" href="{{ Storage::disk('public')->url(setting('site.icon')) }}" type="image/x-icon">
-    <link rel="icon" href="{{ Storage::disk('public')->url(setting('site.icon')) }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ Storage::disk('public')->url(setting('salon.icon')) }}" type="image/x-icon">
+    <link rel="icon" href="{{ Storage::disk('public')->url(setting('salon.icon')) }}" type="image/x-icon">
+    <link rel="icon" href="{{ Storage::disk('public')->url(setting('salon.icon')) }}" type="image/x-icon">
+    <link rel="canonical" href="{{ config('app.url') }}" />
 
     <!-- META -->
     <meta property="og:title" content="{{ setting('site.title') }}" />
@@ -70,7 +71,7 @@
             <div class="header-wrapper">
                 <!-- MOBILE HEADER -->
                 <div class="wsmobileheader clearfix">
-                    <span class="smllogo"><a href="{{ route('home') }}"><img src="{{ Storage::disk('public')->url(setting('site.logo_secondary')) }}"
+                    <span class="smllogo"><a href="{{ route('home') }}"><img src="{{ Storage::disk('public')->url(setting('salon.logo')) }}"
                             alt="mobile-logo" /></a></span>
                     {{-- <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a> --}}
                     <a href="tel:{{ setting('site.phone') }}" class="callusbtn ico-20"><span
@@ -85,10 +86,10 @@
                                 <!-- HEADER LOGO -->
                                 <li aria-haspopup="true" class="wscenterlogo">
                                     <a href="{{ route('home') }}" class="logo-black"><img
-                                            src="{{ Storage::disk('public')->url(setting('site.logo_secondary')) }}"
+                                            src="{{ Storage::disk('public')->url(setting('salon.logo')) }}"
                                             alt="header-logo"></a>
                                     <a href="{{ route('home') }}" class="logo-white"><img
-                                            src="{{ Storage::disk('public')->url(setting('site.logo')) }}"
+                                            src="{{ Storage::disk('public')->url(setting('salon.logo_secondary')) }}"
                                             alt="header-logo"></a>
                                 </li>
                             </ul>

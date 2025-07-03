@@ -10,21 +10,14 @@ use TCG\Voyager\Models\Page;
 
 class WebController extends Controller
 {
-    const PROJECT_CODE = 'op001';
+    public function getTemplateCode() {
+        return session('template_code', config('app.template_code'));
+    }
+
 
     public function sitemap()
     {
-        return response()->view($this::PROJECT_CODE . '.sitemap')->header('Content-Type', 'text/xml');
-    }
-
-    public function legalNotice()
-    {
-        $page = Page::where('slug', 'mentions-legales')->where('status', 'ACTIVE')->first();
-        if (!$page) {
-            return abort(404);
-        }
-
-        return view($this::PROJECT_CODE . '.legal_notice', compact('page'));
+        return response()->view($this->getTemplateCode() . '.sitemap')->header('Content-Type', 'text/xml');
     }
 
     public function home()
@@ -42,6 +35,26 @@ class WebController extends Controller
         }
 
 
-        return view($this::PROJECT_CODE . '.home', compact('groups', 'lastGroup', 'images'));
+        return view($this->getTemplateCode() . '.home', compact('groups', 'lastGroup', 'images'));
+    }
+
+    public function legalNotice()
+    {
+        $page = Page::where('slug', 'mentions-legales')->where('status', 'ACTIVE')->first();
+        if (!$page) {
+            return abort(404);
+        }
+
+        return view($this->getTemplateCode() . '.legal_notice', compact('page'));
+    }
+
+    public function privacyPolicy()
+    {
+        $page = Page::where('slug', 'privacy-policy')->where('status', 'ACTIVE')->first();
+        if (!$page) {
+            return abort(404);
+        }
+
+        return view($this->getTemplateCode() . '.privacy_policy', compact('page'));
     }
 }
