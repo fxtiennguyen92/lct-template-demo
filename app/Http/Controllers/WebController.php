@@ -11,7 +11,7 @@ use TCG\Voyager\Models\Page;
 class WebController extends Controller
 {
     public function getTemplateCode() {
-        return session('template_code', config('app.template_code'));
+        return 'mp002';
     }
 
 

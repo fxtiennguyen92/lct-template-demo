@@ -27,12 +27,39 @@
                 <!-- Menu Column -->
                 <div class="menu-column col-lg-12 col-md-12 col-sm-12">
                     <div class="menu-wrapper inner-column">
-                        <img src="{{ Storage::disk('public')->url($menu->image) }}"
-                            alt="{{ setting('foodily.store') }}" title="{{ setting('foodily.store') }}"></a>
+                        <img src="{{ Storage::disk('public')->url($menu->image) }}" alt="{{ setting('foodily.store') }}"
+                            title="{{ setting('foodily.store') }}"></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!-- End Menu Section -->
+
+
+    <!-- Menu Extra Section -->
+    @php $extras = App\Models\PageSection::getByCode('foodily.menu.extra', 'mp002') @endphp
+    @if (sizeof($extras) > 0)
+        @foreach ($extras as $menu)
+            <section class="menus-section style-two">
+                <div class="auto-container">
+                    <!-- Sec Title -->
+                    <div class="sec-title centered">
+                        <h2>{!! $menu->title !!}</h2>
+                        <div class="separate"></div>
+                    </div>
+                    <div class="row clearfix">
+                        <!-- Menu Column -->
+                        <div class="menu-column col-lg-12 col-md-12 col-sm-12">
+                            <div class="menu-wrapper inner-column">
+                                <img src="{{ Storage::disk('public')->url($menu->image) }}"
+                                    alt="{{ setting('foodily.store') }}" title="{{ setting('foodily.store') }}"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        @endforeach
+    @endif
+    <!-- End Menu Extra Section -->
 @endpush
