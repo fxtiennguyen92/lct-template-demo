@@ -10,7 +10,7 @@
         <div class="pattern-layer" style="background-image: url(mp002/images/main-slider/pattern-1.png)"></div>
         <div class="main-slider-carousel owl-carousel owl-theme">
             @foreach (App\Models\PageSection::getByCode('foodily.home.banner', 'mp002') as $key => $banner)
-                <div class="slide {{ $loop->last ? 'style two' : '' }}">
+                <div class="slide {{ $loop->last ? 'style-two' : '' }}">
                     <div class="auto-container">
                         <div class="row clearfix">
                             <!-- Content Column -->
