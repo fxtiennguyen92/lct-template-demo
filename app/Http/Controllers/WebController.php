@@ -38,6 +38,11 @@ class WebController extends Controller
         return view($this->getTemplateCode() . '.home', compact('groups', 'lastGroup', 'images'));
     }
 
+    public function menu()
+    {
+        return view($this->getTemplateCode() . '.menu');
+    }
+
     public function legalNotice()
     {
         $page = Page::where('slug', 'mentions-legales')->where('status', 'ACTIVE')->first();

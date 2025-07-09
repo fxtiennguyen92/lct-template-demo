@@ -91,7 +91,8 @@
         @include('op001.template.footer')
         <!-- END FOOTER -->
 
-    </div> <!-- END PAGE -->
+    </div>
+    <!-- END PAGE -->
 
     <!-- EXTERNAL SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
