@@ -18,6 +18,7 @@ Route::get('template/{code}', [TemplateController::class, 'view'])->name('templa
  */
 Route::get('', [WebController::class, 'home']);
 Route::get('home', [WebController::class, 'home'])->name('home');
+Route::get('menu', [WebController::class, 'menu'])->name('menu');
 Route::get('mentions-legales', [WebController::class, 'legalNotice'])->name('legal-notice');
 Route::get('privacy-policy', [WebController::class, 'privacyPolicy'])->name('privacy-policy');
 

@@ -16,7 +16,7 @@
         <!-- SINGLE POST IMAGE -->
         @if ($page->image)
             <div class="blog-post-img mt-50 mb-50">
-                <img class="img-fluid" src="{{ Storage::disk('public')->url($page->image) }}" alt="blog-post-image" />
+                <img class="img-fluid" src="{{ Storage::disk('public')->url($page->image) }}" alt="blog-post-image"/>
             </div>
         @endif
 
