@@ -238,6 +238,13 @@
 	background-repeat:repeat-x;
 }
 
+@media (max-width: 767px) {
+  .container {
+    bottom: 55px;
+    height: 150px;
+  }
+}
+
 .banner-section .slide{
 	position:relative;
 	overflow:hidden;
