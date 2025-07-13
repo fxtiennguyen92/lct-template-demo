@@ -10,7 +10,8 @@ use TCG\Voyager\Models\Page;
 
 class WebController extends Controller
 {
-    public function getTemplateCode() {
+    public function getTemplateCode()
+    {
         return session('template_code', config('app.template_code'));
     }
 
@@ -20,8 +21,11 @@ class WebController extends Controller
         return response()->view($this->getTemplateCode() . '.sitemap')->header('Content-Type', 'text/xml');
     }
 
-    public function home()
+    public function home(Request $request)
     {
+        // Redirect
+
+
         // Services
         $groups = Group::getAll();
         $lastGroup = $groups->pop();
