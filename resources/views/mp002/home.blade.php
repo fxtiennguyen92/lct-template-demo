@@ -72,7 +72,7 @@
 
                             <h4 class="mb-2"><span class="theme_color">Horaires</span> d'ouverture</h4>
                             <ul class="list-style-two">
-                                @foreach (App\Models\OpeningHour::getAll() as $hour)
+                                @foreach ($openingHours as $hour)
                                     <li>{{ $hour->day.' : '.$hour->time }}</li>
                                 @endforeach
                             </ul>

@@ -2,12 +2,13 @@
 
 @push('content')
     <!-- BANNER -->
+    @php $banner = App\Models\PageSection::getFirstByCode('lanotte.home.banner', 'op001') @endphp
     <section id="hero-2" class="bg-fixed hero-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
                 <div class="col-md-7 col-lg-6">
                     <div class="hero-2-txt white--color wow fadeInRight">
-                        <h2>Belle <br /><small><i>jusqu'au bout</i></small> <br /><span>des ongles</span></h2>
+                        <h2>{!! $banner->title !!}</h2>
                         <a href="{{ setting('site.planity') }}" class="mt-4 btn violet-red--btn tra-white--hover"
                             target="_blank">Prendre rendez-vous</a>
                     </div>
@@ -15,8 +16,8 @@
 
                 <div class="col-md-5 col-lg-6">
                     <div class="hero-2-img wow fadeInLeft">
-                        <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.home_banner')) }}"
-                            alt="hero-image">
+                        <img class="img-fluid" src="{{ Storage::disk('public')->url($banner->image) }}"
+                            alt="{{ setting('salon.store') }}">
                     </div>
                 </div>
 
@@ -34,40 +35,24 @@
 
 
     <!-- ABOUT -->
+    @php $about = App\Models\PageSection::getFirstByCode('lanotte.home.about', 'op001') @endphp
     <section id="about-3a" class="pt-100 about-section division">
         <div class="container">
             <div class="row d-flex align-items-center">
 
                 <div class="col-md-5 col-lg-6 order-last order-md-2">
                     <div class="img-block left-column wow fadeInRight">
-                        <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.about_banner')) }}"
-                            alt="about-image">
+                        <img class="img-fluid" src="{{ Storage::disk('public')->url($about->image) }}"
+                            alt="{{ setting('salon.store') }}">
                     </div>
                 </div>
 
                 <div class="col-md-7 col-lg-6 order-first order-md-2">
                     <div class="txt-block right-column wow fadeInLeft">
-                        <div class="section-id">Faites Briller Votre Style</div>
+                        <div class="section-id">{{ $about->sub_title }}</div>
 
-                        <h3 class="h3-md">Art Ongulaire d'Exception</h3>
-                        <p class="p-lg">Nullam tempor sapien gravida donec and pretium ipsum porta integer justo an odio
-                            velna vitae
-                            auctor integer congue magna undo purus a pretium ligula rutrum magna egestas
-                        </p>
-                        <ul class="simple-list">
-                            <li class="list-item">
-                                <p class="p-lg">Aliquam vitae molestie at quisque sapien volutpat and justo, aliquet
-                                    molestie purus
-                                    efficitur ipsum
-                                </p>
-                            </li>
-                            <li class="list-item">
-                                <p class="p-lg">Sagittis congue augue magna risus mauris volutpat and egestas magna
-                                    suscipit egestas a
-                                    vitae purus
-                                </p>
-                            </li>
-                        </ul>
+                        <h3 class="h3-md">{!! $about->title !!}</h3>
+                        {!! $about->content !!}
                     </div>
                     <div class="txt-block txt-table right-column wow fadeInLeft">
                         <!-- Table -->
@@ -90,44 +75,18 @@
     <!-- END ABOUT -->
 
     <!-- SERVICES -->
-    <section id="services-2" class="wide-70 services-section division">
-        <div class="container">
-            <div class="sbox-2-wrapper text-center">
-                <div class="row row-cols-1 row-cols-md-3">
-                    <div class="col">
-                        <div id="sb-2-1" class="sbox-2 mb-40 wow fadeInUp" data-wow-delay="0.3s"
-                            style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                            <div class="sbox-ico ico-95 black--color">
-                                <span class="flaticon-pedicure-1"></span>
-                            </div>
-                            <h5 class="h5-lg">Pose Capsule</h5>
-                            <p class="p-lg">Ligula risus auctor tempus and dolor vitae undo purus semper sodales</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div id="sb-2-2" class="sbox-2 mb-40 wow fadeInUp" data-wow-delay="0.6s"
-                            style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInUp;">
-                            <div class="sbox-ico ico-95 black--color">
-                                <span class="flaticon-nail-polish-3"></span>
-                            </div>
-                            <h5 class="h5-lg">Remplissage</h5>
-                            <p class="p-lg">Ligula risus auctor tempus and dolor vitae undo purus semper sodales</p>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div id="sb-2-3" class="sbox-2 mb-40 wow fadeInUp" data-wow-delay="0.9s"
-                            style="visibility: visible; animation-delay: 0.9s; animation-name: fadeInUp;">
-                            <div class="sbox-ico ico-95 black--color">
-                                <span class="flaticon-soak"></span>
-                            </div>
-                            <h5 class="h5-lg">Beauté des pieds</h5>
-                            <p class="p-lg">Ligula risus auctor tempus and dolor vitae undo purus semper sodales</p>
-                        </div>
+    @php $preServices = App\Models\PageSection::getFirstByCode('lanotte.home.pre-services', '') @endphp
+    @if ($preServices)
+        <section id="services-2" class="wide-70 services-section division">
+            <div class="container">
+                <div class="sbox-2-wrapper text-center">
+                    <div class="row row-cols-1 row-cols-md-3">
+                        {!! $preServices->content !!}
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
     <!-- END SERVICES -->
 
     <!-- PRICE -->
@@ -135,38 +94,59 @@
     <!-- END PRICE -->
 
     <!-- GALLERY -->
-    <section id="gallery-1" class="wide-60 inner-page-hero gallery-section division">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8">
-                    <div class="section-title title-01 mb-70">
-                        <span class="section-id">Galerie</span>
-                        <h2 class="h2-lg">Reste Magnifique</h2>
+    @php $gallerySection = App\Models\PageSection::getFirstByCode('lanotte.gallery', '') @endphp
+    @if ($gallerySection && sizeof($images) > 0)
+        <section id="gallery-1" class="wide-60 inner-page-hero gallery-section division">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8">
+                        <div class="section-title title-01 mb-70">
+                            <span class="section-id">{{ $gallerySection->sub_title }}</span>
+                            <h2 class="h2-lg">{{ $gallerySection->title }}</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 gallery-items-list">
+                        <div class="masonry-wrap grid-loaded text-center">
+                            @foreach ($images as $image)
+                                <div class="masonry-image">
+                                    <a class="image-link" href="{{ $image }}">
+                                        <div class="hover-overlay">
+                                            <img class="img-fluid" src="{{ $image }}"
+                                                alt="{{ setting('salon.store') }}" />
+                                            <div class="item-overlay"></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+    @endif
+    <!-- END GALLERY -->
 
+    <!-- BANNER PROMOTION -->
+    @php $promotionSection = App\Models\PageSection::getFirstByCode('lanotte.promotion', '') @endphp
+    @if ($promotionSection)
+    <section id="banner-3" class="bg-fixed banner-section division">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12 gallery-items-list">
-                    <div class="masonry-wrap grid-loaded text-center">
-                        @foreach ($images as $image)
-                            <div class="masonry-image">
-                                <a class="image-link" href="{{ $image }}">
-                                    <div class="hover-overlay">
-                                        <img class="img-fluid" src="{{ $image }}" alt="gallery-image" />
-                                        <div class="item-overlay"></div>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
+                <div class="col-md-7 col-lg-6">
+                    <div class="banner-3-txt text-center">
+                        <h5 class="h5-md">{!! $promotionSection->content !!}</h5>
+                        <h2>{{ $promotionSection->title }}</h2>
+                        <h4 class="h4-xs">{{ $promotionSection->sub_title }}</h4>
+                        <a class="btn violet-red--btn tra-black--hover" href="{{ setting('site.planity') }}" target="_blank"
+                            rel="noopener">Rendez-vous</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- END GALLERY -->
-
-    <!-- BANNER PROMOTION -->
-    {!! setting('salon.promotion_section') !!}
+    @endif
     <!-- END BANNER PROMOTION -->
 @endpush

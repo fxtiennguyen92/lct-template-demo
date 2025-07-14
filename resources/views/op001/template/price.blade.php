@@ -1,18 +1,20 @@
+
+@php $priceSection = App\Models\PageSection::getFirstByCode('lanotte.price', '') @endphp
 <section id="about-4" class="pt-100 about-section division">
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-md-6">
                 <div class="img-block right-column wow fadeInLeft"
                     style="visibility: visible; animation-name: fadeInLeft;">
-                    <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.price_banner')) }}"
+                    <img class="img-fluid" src="{{ Storage::disk('public')->url($priceSection->image) }}"
                         alt="{{ setting('salon.store') }}">
                 </div>
             </div>
 
             <div class="col-md-6 order-first order-md-2">
                 <div class="txt-block right-column wow fadeInLeft">
-                    <span class="section-id">Éclatant, Brillant, Impeccable</span>
-                    <h3 class="h3-md">Faites briller votre journée avec vos ongles brillants</h3>
+                    <span class="section-id">{{ $priceSection->sub_title }}</span>
+                    <h3 class="h3-md">{{ $priceSection->title }}</h3>
                 </div>
             </div>
         </div>
@@ -63,7 +65,7 @@
             <!-- PRICING IMAGE -->
             <div class="col-lg-6">
                 <div class="pricing-1-img wow fadeInRight" style="visibility: visible; animation-name: fadeInRight;">
-                    <img class="img-fluid" src="{{ Storage::disk('public')->url(setting('salon.service_banner')) }}" alt="{{ setting('site.store') }}">
+                    <img class="img-fluid" src="{{ Storage::disk('public')->url($priceSection->background) }}" alt="{{ setting('salon.store') }}">
                 </div>
             </div>
 

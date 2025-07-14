@@ -24,7 +24,16 @@ class WebController extends Controller
     public function home(Request $request)
     {
         // Redirect
+        if ($request->has('r')) {
+            $type = strtolower($request->input('r'));
 
+            if (in_array($type, ['planity', 'google_review'])) {
+                $redirectUrl = setting('site.'.$type);
+                if ($redirectUrl) {
+                    return redirect()->away(urldecode($redirectUrl));
+                }
+            }
+        }
 
         // Services
         $groups = Group::getAll();
@@ -37,7 +46,6 @@ class WebController extends Controller
         foreach ($files as $file) {
             $images[] = asset('storage/gallery/' . $file->getFilename());
         }
-
 
         return view($this->getTemplateCode() . '.home', compact('groups', 'lastGroup', 'images'));
     }

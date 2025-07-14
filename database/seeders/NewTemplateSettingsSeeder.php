@@ -21,8 +21,6 @@ class NewTemplateSettingsSeeder extends Seeder
             ['logo_secondary', 'Logo du site (secondary)', 'image'],
             ['preloader', 'Chargement', 'image'],
             ['store', 'Boutique', 'text'],
-            ['home_banner', 'Home Banner', 'image'],
-            ['about_banner', 'About Banner', 'image'],
             ['error_page_banner', 'Error Page Banner', 'image'],
         );
 

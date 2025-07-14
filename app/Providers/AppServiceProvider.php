@@ -24,10 +24,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // Opening hours
         View::composer('*', function ($view) {
-            
             if (!Request::is('admin/*')) {
+
+                // Opening hours
                 $openingHours = OpeningHour::getAll();
                 $view->with('openingHours', $openingHours);
             }
