@@ -38,28 +38,28 @@
         rel="stylesheet">
 
     <!-- BOOTSTRAP CSS -->
-    <link href="op003/css/bootstrap.min.css" rel="stylesheet">
+    <link href="op004/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FONT ICONS -->
-    <link href="op003/css/flaticon.css" rel="stylesheet">
+    <link href="op004/css/flaticon.css" rel="stylesheet">
 
     <!-- PLUGINS STYLESHEET -->
-    <link href="op003/css/menu.css" rel="stylesheet">
-    <link href="op003/css/dropdown-effects/fade-down.css" id="effect" media="all" rel="stylesheet">
-    <link href="op003/css/magnific-popup.css" rel="stylesheet">
-    <link href="op003/css/flexslider.css" rel="stylesheet">
-    <link href="op003/css/owl.carousel.min.css" rel="stylesheet">
-    <link href="op003/css/owl.theme.default.min.css" rel="stylesheet">
-    <link href="op003/css/datetimepicker.min.css" rel="stylesheet">
+    <link href="op004/css/menu.css" rel="stylesheet">
+    <link href="op004/css/dropdown-effects/fade-down.css" id="effect" media="all" rel="stylesheet">
+    <link href="op004/css/magnific-popup.css" rel="stylesheet">
+    <link href="op004/css/flexslider.css" rel="stylesheet">
+    <link href="op004/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="op004/css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="op004/css/datetimepicker.min.css" rel="stylesheet">
 
     <!-- TEMPLATE CSS -->
-    <link href="op003/css/style.css" rel="stylesheet">
+    <link href="op004/css/style.css" rel="stylesheet">
 
     <!-- ON SCROLL ANIMATION -->
-    <link href="op003/css/animate.css" rel="stylesheet">
+    <link href="op004/css/animate.css" rel="stylesheet">
 
     <!-- RESPONSIVE CSS -->
-    <link href="op003/css/responsive.css" rel="stylesheet">
+    <link href="op004/css/responsive.css" rel="stylesheet">
 </head>
 
 <body>
@@ -77,10 +77,10 @@
     <!-- END SPINNER -->
 
     <!-- PAGE -->
-    <div id="page" class="page bg--moccasin">
+    <div id="page" class="page">
 
         <!-- HEADER -->
-        @include('op003.template.header')
+        @include('op004.template.header')
         <!-- END HEADER -->
 
         <!-- CONTENT -->
@@ -88,33 +88,33 @@
         <!-- END CONTENT -->
 
         <!-- FOOTER -->
-        @include('op003.template.footer')
+        @include('op004.template.footer')
         <!-- END FOOTER -->
 
     </div>
     <!-- END PAGE -->
 
     <!-- EXTERNAL SCRIPTS -->
-    <script src="op003/js/jquery-3.6.0.min.js"></script>
-    <script src="op003/js/bootstrap.min.js"></script>
-    <script src="op003/js/modernizr.custom.js"></script>
-    <script src="op003/js/jquery.easing.js"></script>
-    <script src="op003/js/jquery.appear.js"></script>
-    <script src="op003/js/jquery.scrollto.js"></script>
-    <script src="op003/js/menu.js"></script>
-    <script src="op003/js/materialize.js"></script>
-    <script src="op003/js/datetimepicker.js"></script>
-    <script src="op003/js/jquery.vide.min.js"></script>
-    <script src="op003/js/imagesloaded.pkgd.min.js"></script>
-    <script src="op003/js/isotope.pkgd.min.js"></script>
-    <script src="op003/js/jquery.flexslider.js"></script>
-    <script src="op003/js/owl.carousel.min.js"></script>
-    <script src="op003/js/jquery.magnific-popup.min.js"></script>
-    <script src="op003/js/jquery.validate.min.js"></script>
-    <script src="op003/js/jquery.ajaxchimp.min.js"></script>
-    <script src="op003/js/wow.js"></script>
+    <script src="op004/js/jquery-3.6.0.min.js"></script>
+    <script src="op004/js/bootstrap.min.js"></script>
+    <script src="op004/js/modernizr.custom.js"></script>
+    <script src="op004/js/jquery.easing.js"></script>
+    <script src="op004/js/jquery.appear.js"></script>
+    <script src="op004/js/jquery.scrollto.js"></script>
+    <script src="op004/js/menu.js"></script>
+    <script src="op004/js/materialize.js"></script>
+    <script src="op004/js/datetimepicker.js"></script>
+    <script src="op004/js/jquery.vide.min.js"></script>
+    <script src="op004/js/imagesloaded.pkgd.min.js"></script>
+    <script src="op004/js/isotope.pkgd.min.js"></script>
+    <script src="op004/js/jquery.flexslider.js"></script>
+    <script src="op004/js/owl.carousel.min.js"></script>
+    <script src="op004/js/jquery.magnific-popup.min.js"></script>
+    <script src="op004/js/jquery.validate.min.js"></script>
+    <script src="op004/js/jquery.ajaxchimp.min.js"></script>
+    <script src="op004/js/wow.js"></script>
 
-    <script src="op003/js/custom.js"></script>
+    <script src="op004/js/custom.js"></script>
 
 </body>
 
