@@ -1,38 +1,56 @@
-@extends('op001.template.index')
+@extends('op003.template.index')
 
 @push('content')
     <!-- BANNER -->
-    @php $banner = App\Models\PageSection::getFirstByCode('lanotte.home.banner', 'op001') @endphp
-    <section id="hero-2" class="bg-fixed hero-section division">
+    @php
+        $banner = App\Models\PageSection::getFirstByCode('lanotte.home.banner', 'op003');
+        $imagePath = str_replace('\\', '/', $banner->image);
+    @endphp
+    <section id="hero-9" class="bg-fixed hero-section division"
+        style="background-image: url('{{ Storage::disk('public')->url($imagePath) }}')">
         <div class="container">
             <div class="row d-flex align-items-center">
-                <div class="col-md-7 col-lg-6">
-                    <div class="hero-2-txt white--color wow fadeInRight">
-                        <h2>{!! $banner->title !!}</h2>
-                        <a href="{{ setting('site.planity') }}" class="mt-4 btn violet-red--btn tra-white--hover"
-                            target="_blank">Prendre rendez-vous</a>
+                <div class="col-md-8 col-lg-6">
+                    <div class="hero-9-txt">
+                        <h2>{{ $banner->title }}</h2>
+                        <p class="p-title-md">{{ $banner->sub_title }}</p>
+
+                        <a href="{{ setting('site.planity') }}" class="btn violet-red--btn tra-black--hover">Prendre
+                            rendez-vous</a>
                     </div>
                 </div>
-
-                <div class="col-md-5 col-lg-6">
-                    <div class="hero-2-img wow fadeInLeft">
-                        <img class="img-fluid" src="{{ Storage::disk('public')->url($banner->image) }}"
-                            alt="{{ setting('salon.store') }}">
-                    </div>
-                </div>
-
             </div>
-        </div>
-
-        <div class="wave-shape-bottom">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 195">
-                <path fill="#ffffff" fill-opacity="1" d="M0,192L1440,96L1440,320L0,320Z"></path>
-            </svg>
         </div>
     </section>
     <!-- END BANNER -->
 
+    <!-- SERVICES -->
+    @php $preServices = App\Models\PageSection::getByCode('lanotte.home.pre-services', '') @endphp
+    @if (sizeof($preServices) > 0)
+        <section id="services-2" class="wide-70 services-section division">
+            <div class="container">
+                <div class="sbox-2-wrapper text-center">
+                    <div class="row row-cols-1 row-cols-md-3">
+                        @foreach ($preServices as $pservice)
+                            <div class="col">
+                                <div id="sb-2-1" class="sbox-2 mb-40 wow fadeInUp" data-wow-delay="0.3s">
+                                    <!-- Icon -->
+                                    <div class="sbox-ico ico-95 black--color">
+                                        <span class="{{ $pservice->content_2 }}"></span>
+                                    </div>
 
+                                    <!-- Title -->
+                                    <h5 class="h5-lg">{{ $pservice->title }}</h5>
+                                    <p class="p-lg">{{ $pservice->sub_title }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
+    <!-- END SERVICES -->
 
     <!-- ABOUT -->
     @php $about = App\Models\PageSection::getFirstByCode('lanotte.home.about', 'op001') @endphp
@@ -74,36 +92,8 @@
     </section>
     <!-- END ABOUT -->
 
-    <!-- SERVICES -->
-    @php $preServices = App\Models\PageSection::getByCode('lanotte.home.pre-services', '') @endphp
-    @if (sizeof($preServices) > 0)
-        <section id="services-2" class="wide-70 services-section division">
-            <div class="container">
-                <div class="sbox-2-wrapper text-center">
-                    <div class="row row-cols-1 row-cols-md-3">
-                        @foreach ($preServices as $pservice)
-                            <div class="col">
-                                <div id="sb-2-1" class="sbox-2 mb-40 wow fadeInUp" data-wow-delay="0.3s">
-                                    <!-- Icon -->
-                                    <div class="sbox-ico ico-95 black--color">
-                                        <span class="{{ $pservice->content_2 }}"></span>
-                                    </div>
-
-                                    <!-- Title -->
-                                    <h5 class="h5-lg">{{ $pservice->title }}</h5>
-                                    <p class="p-lg">{{ $pservice->sub_title }}</p>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </section>
-    @endif
-    <!-- END SERVICES -->
-
     <!-- PRICE -->
-    @include('op001.template.price')
+    @include('op003.template.price')
     <!-- END PRICE -->
 
     <!-- GALLERY -->
